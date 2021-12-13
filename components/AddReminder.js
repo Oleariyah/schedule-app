@@ -43,7 +43,10 @@ export default AddReminder = () => {
       <View style={styles.content}>
         <ScrollView onPress={() => setEdit("")}>
           <Text style={styles.title}>MEDICINE TYPE</Text>
-          <View style={{ flexDirection: "row", marginTop: 20 }}>
+          <ScrollView
+            style={{ flexDirection: "row", marginTop: 20 }}
+            horizontal
+          >
             {options.map((item, index) => (
               <View key={index}>
                 <TouchableOpacity
@@ -65,7 +68,7 @@ export default AddReminder = () => {
                 </TouchableOpacity>
               </View>
             ))}
-          </View>
+          </ScrollView>
           <View style={{ marginTop: 25 }}>
             <Text style={styles.title}>REMINDER NAME</Text>
             <TextInput
