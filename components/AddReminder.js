@@ -110,7 +110,7 @@ export default AddReminder = () => {
                   name={edit === "time" ? "pen" : "clock"}
                   onPress={() => {
                     setEdit(edit === "time" ? "" : "time");
-                    setShow(true);
+                    setShow(!show);
                   }}
                 />
               }
@@ -154,7 +154,7 @@ export default AddReminder = () => {
                   style={styles.button}
                 >
                   <View>
-                    <Text style={{ color: "24464f" }}>+</Text>
+                    <Text style={{ color: "#24464f" }}>+</Text>
                   </View>
                 </TouchableOpacity>
               </View>
@@ -163,7 +163,7 @@ export default AddReminder = () => {
               <TouchableOpacity
                 style={{
                   width: "100%",
-                  height: 40,
+                  height: 50,
                   backgroundColor: "#f6b8a9",
                   justifyContent: "center",
                   borderRadius: 15,

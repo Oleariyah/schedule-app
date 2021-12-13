@@ -8,10 +8,25 @@ function Header({ navigation, route }) {
     <View style={styles.container}>
       {navigation && (
         <TouchableOpacity
-          style={{ position: "absolute", left: 0 }}
+          style={{
+            position: "absolute",
+            left: 0,
+          }}
           onPress={() => navigation.goBack()}
         >
-          <MaterialIcons name="arrow-back" size={20} color="#cdc88c" />
+          <View
+            style={{
+              borderWidth: 1,
+              borderColor: "#46666f",
+              width: 40,
+              height: 40,
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 10,
+            }}
+          >
+            <MaterialIcons name="arrow-back" size={20} color="#cdc88c" />
+          </View>
         </TouchableOpacity>
       )}
       <Text style={styles.contentStyle}>

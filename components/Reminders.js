@@ -18,68 +18,104 @@ const data = [
   {
     month: "Mon",
     day: 12,
+    rating: 3,
   },
   {
     month: "Tue",
     day: 13,
+    rating: 2,
   },
   {
     month: "Wed",
     day: 14,
+    rating: 1,
   },
   {
     month: "Thu",
     day: 15,
+    rating: 3,
   },
   {
     month: "Fri",
     day: 16,
+    rating: 3,
   },
   {
     month: "Sat",
     day: 17,
+    rating: 3,
   },
   {
     month: "Sun",
     day: 18,
+    rating: 3,
   },
 ];
+
+const colors = ["#a0b2ff", "#fce185", "#f6b8a9"];
+
 const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
 
 const RenderCard = ({ item, index, selected, set }, props) => {
   return (
-    <TouchableOpacity
-      style={[
-        styles.card,
-        { backgroundColor: selected === index ? "#f6b8a9" : "transparent" },
-      ]}
-      key={index}
-      onPress={() => {
-        set(index);
-      }}
-    >
-      <View style={{ marginBottom: 5 }}>
+    <View>
+      <TouchableOpacity
+        style={[
+          styles.card,
+          { backgroundColor: selected === index ? "#f6b8a9" : "transparent" },
+        ]}
+        key={index}
+        onPress={() => {
+          set(index);
+        }}
+      >
+        <View style={{ marginBottom: 5 }}>
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 16,
+              color: selected === index ? "#475456" : "#46666f",
+            }}
+          >
+            {item.month}
+          </Text>
+        </View>
         <Text
           style={{
             textAlign: "center",
-            fontSize: 16,
-            color: selected === index ? "#475456" : "#46666f",
+            color: selected === index ? "#595d5e" : "white",
+            fontSize: 18,
+            fontWeight: "bold",
           }}
         >
-          {item.month}
+          {item.day}
         </Text>
-      </View>
-      <Text
+      </TouchableOpacity>
+      <View
         style={{
-          textAlign: "center",
-          color: selected === index ? "#595d5e" : "white",
-          fontSize: 18,
-          fontWeight: "bold",
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "center",
+          marginTop: 10,
         }}
       >
-        {item.day}
-      </Text>
-    </TouchableOpacity>
+        {colors.map((value, index) => {
+          for (let i = 0; i < item.rating; i++) {
+            return (
+              <View
+                style={{
+                  backgroundColor: value,
+                  height: 3,
+                  width: 3,
+                  marginHorizontal: 3,
+                }}
+                key={index}
+              />
+            );
+          }
+        })}
+      </View>
+    </View>
   );
 };
 
@@ -114,7 +150,7 @@ const Reminders = () => {
 
 const styles = StyleSheet.create({
   card: {
-    flex: 1,
+    flex: 2,
     width: 70,
     height: 90,
     overflow: "hidden",
