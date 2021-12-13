@@ -6,12 +6,14 @@ import AddReminderScreen from "./screens/AddReminderScreen.";
 import {
   StyleSheet,
   SafeAreaView,
+  View,
   Button,
   TouchableOpacity,
   Text,
 } from "react-native";
 import Header from "./components/Header";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
+import BottomTabs from "./components/BottomTabs";
 import { MaterialIcons } from "@expo/vector-icons";
 
 const Stack = createNativeStackNavigator();

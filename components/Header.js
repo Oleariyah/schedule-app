@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Button, View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import BottomTabs from "./BottomTabs";
 
 function Header({ navigation, route }) {
   return (

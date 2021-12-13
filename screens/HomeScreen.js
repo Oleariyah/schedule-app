@@ -4,6 +4,7 @@ import { Portal } from "react-native-paper";
 import moment from "moment";
 import Reminders from "../components/Reminders";
 import ReminderList from "../components/ReminderList";
+import BottomTabs from "../components/BottomTabs";
 
 function HomeScreen({ navigation }) {
   return (
@@ -24,13 +25,16 @@ function HomeScreen({ navigation }) {
         title="Go to Details"
         onPress={() => navigation.navigate("Add Reminder")}
       /> */}
+      <BottomTabs navigation={navigation} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    position: "relative",
+    height: "100%",
+    width: "100%",
     backgroundColor: "#0e323d",
     justifyContent: "center",
     alignItems: "center",
