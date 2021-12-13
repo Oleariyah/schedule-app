@@ -18,7 +18,7 @@ function Header({ navigation, route }) {
         {navigation ? "Add Reminder" : "Logo"}
       </Text>
       {navigation && (
-        <TouchableOpacity style={{ position: "absolute", right: 30 }}>
+        <TouchableOpacity style={{ position: "absolute", right: 0 }}>
           <Text style={{ color: "#23b960" }}> Save </Text>
         </TouchableOpacity>
       )}
@@ -30,7 +30,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: "95%",
     justifyContent: "center",
     alignItems: "center",
     color: "#fff",

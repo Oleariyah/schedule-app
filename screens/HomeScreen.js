@@ -21,10 +21,6 @@ function HomeScreen({ navigation }) {
       <View style={{ flex: 2, width: "100%", height: "100%" }}>
         <ReminderList navigation={navigation} />
       </View>
-      {/* <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate("Add Reminder")}
-      /> */}
       <BottomTabs navigation={navigation} />
     </View>
   );

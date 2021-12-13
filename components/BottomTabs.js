@@ -37,27 +37,15 @@ const BottomTabs = ({ navigation }) => {
     <View style={styles.container}>
       {tabs.map((item, index) => (
         <View key={index}>
-          {Platform.OS === "ios" ? (
-            <TouchableOpacity
-              onPress={() => {
-                item.name === "Home"
-                  ? navigation.navigate("Home")
-                  : navigation.push("Add Reminder");
-              }}
-            >
-              <MaterialIcons name={item.icon} size={25} color="#6a7e88" />
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity
-              onPress={() => {
-                item.name === "Home"
-                  ? navigation.navigate("Home")
-                  : navigation.push("Add Reminder");
-              }}
-            >
-              <MaterialIcons name={item.icon} size={25} color="#6a7e88" />
-            </TouchableOpacity>
-          )}
+          <TouchableOpacity
+            onPress={() => {
+              item.name === "Home"
+                ? navigation.navigate("Home")
+                : navigation.push("Add Reminder");
+            }}
+          >
+            <MaterialIcons name={item.icon} size={25} color="#6a7e88" />
+          </TouchableOpacity>
         </View>
       ))}
     </View>

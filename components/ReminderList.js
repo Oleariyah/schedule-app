@@ -107,6 +107,7 @@ export default ReminderList = (props) => {
           <View
             style={{
               marginVertical: 30,
+              marginBottom: 130,
             }}
           >
             <FlatList
